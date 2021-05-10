@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.DatePicker
+import android.widget.Toast
+import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_memo.*
 import kotlinx.android.synthetic.main.card_memo.*
 import org.jetbrains.anko.AnkoLogger
@@ -21,20 +24,36 @@ import org.wit.memo.helpers.showImagePicker
 import org.wit.memo.main.MainApp
 //import org.wit.placemark.models.Location
 import org.wit.memo.models.MemoModel
+import java.util.*
+
 class MemoActivity : AppCompatActivity(), AnkoLogger {
 
     var memo = MemoModel()
     lateinit var app : MainApp
     var edit = false
     val IMAGE_REQUEST = 1
+    var dateToBeStored : String =""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_memo)
+        val datePicker = findViewById<DatePicker>(R.id.date_Picker)
+        val today = Calendar.getInstance()
+        datePicker.init(today.get(Calendar.YEAR), today.get(Calendar.MONTH),
+            today.get(Calendar.DAY_OF_MONTH)
+
+        ) { view, year, month, day ->
+            val month = month + 1
+            val msg = "You Selected: $day/$month/$year"
+            dateToBeStored = "$day/$month/$year"
+           // Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+        }
+
         app = application as MainApp
 
         if (intent.hasExtra("memo_edit")) {
+          datePicker.isVisible = false
             edit = true
             memo = intent.extras?.getParcelable<MemoModel>("memo_edit")!!
             memoTitleAdd.setText(memo.title)
@@ -52,6 +71,7 @@ class MemoActivity : AppCompatActivity(), AnkoLogger {
             memo.title = memoTitleAdd.text.toString()
             memo.description = memoDescriptionAdd.text.toString()
             memo.address = memoAddressAdd.text.toString()
+            memo.personDate = dateToBeStored
             if (memo.title.isEmpty()) {
                 toast(R.string.enter_memo_title)
             } else {

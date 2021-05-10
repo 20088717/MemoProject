@@ -35,6 +35,7 @@ class MemoAdapter constructor(private var memos: List<MemoModel>,
         fun bind(memo: MemoModel,  listener : MemoListener) {
             itemView.memoTitle.text = memo.title
             itemView.description.text = memo.description
+            itemView.dateadded.text = memo.personDate
             itemView.imageIcon.setImageBitmap(readImageFromPath(itemView.context, memo.image))
             itemView.setOnClickListener { listener.onMemoClick(memo) }
         }

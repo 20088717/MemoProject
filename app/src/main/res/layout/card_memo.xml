@@ -35,6 +35,12 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/memoTitle"
             android:layout_toEndOf="@+id/imageIcon"/>
+        <TextView
+            android:id="@+id/dateadded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/description"
+            android:layout_toEndOf="@+id/imageIcon"/>
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
