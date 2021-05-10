@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/item_add"
+        android:icon="@drawable/contact_icon"
+        android:title="@string/menu_addMemo"
+        app:showAsAction="always" />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="118dp"-->
+<!--        android:layout_height="91dp"-->
+<!--        app:srcCompat="@drawable/contact" />-->
+
+
+</menu>

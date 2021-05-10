@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Memo</string>
+    <string name="button_addMemo">Add Contact</string>
+    <string name="hint_memoTitle">Name</string>
+    <string name="hint_memoDescription">Mobile Number</string>
+    <string name="hint_memoAddress">Address</string>
+    <string name="menu_addMemo">Add</string>
+    <string name="menu_cancelMemo">Cancel</string>
+    <string name="menu_deleteMemo">Delete</string>
+    <string name="enter_memo_title">Please enter a Contact Name </string>
+    <string name="save_memo">Save Contact </string>
+    <string name="button_addImage"> Add Image </string>
+    <string name="select_memo_image">Select contacts image</string>
+    <string name="change_memo_image">Change Image</string>
+    <string name="memo_image">contact image</string>
+</resources>
