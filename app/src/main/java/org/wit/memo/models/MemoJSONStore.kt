@@ -46,6 +46,7 @@ class MemoJSONStore : MemoStore, AnkoLogger {
             foundMemo.description = memo.description
             foundMemo.address = memo.address
             foundMemo.image = memo.image
+            foundMemo.personDate = memo.personDate
 
         }
         serialize()

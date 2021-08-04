@@ -47,13 +47,14 @@ class MemoActivity : AppCompatActivity(), AnkoLogger {
             val month = month + 1
             val msg = "You Selected: $day/$month/$year"
             dateToBeStored = "$day/$month/$year"
-           // Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
         }
 
         app = application as MainApp
 
         if (intent.hasExtra("memo_edit")) {
-          datePicker.isVisible = false
+//          datePicker.isVisible = false
+            datePicker.isVisible = true
             edit = true
             memo = intent.extras?.getParcelable<MemoModel>("memo_edit")!!
             memoTitleAdd.setText(memo.title)
