@@ -64,6 +64,11 @@ class MemoActivity : AppCompatActivity(), AnkoLogger {
             if (memo.image != null) {
                 chooseImage.setText(R.string.change_memo_image)
             }
+
+            val string: String = memo.personDate
+            val dateArray: List<String> = string.split("/")
+            datePicker.updateDate(dateArray[2].toInt(), dateArray[1].toInt()-1, dateArray[0].toInt())
+
             btnAdd.setText(R.string.save_memo)
         }
 
